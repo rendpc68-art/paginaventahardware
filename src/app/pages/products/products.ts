@@ -38,7 +38,7 @@ export class Products {
 
   productosFiltrados = computed(() => {
 
-    const texto = this.busqueda().toLowerCase();
+    const texto = this.busqueda().trim().toLowerCase();
 
     const categoria = this.categoriaSeleccionada();
 

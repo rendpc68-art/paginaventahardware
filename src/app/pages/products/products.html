@@ -37,7 +37,19 @@
                 [product]="product">
             </app-product-card>
 
-        }
+        } @empty {
+
+        <div class="no-results">
+
+            <h3>No se encontraron productos.</h3>
+
+            <p>
+                Intente con otro nombre o seleccione otra categoría.
+            </p>
+
+        </div>
+
+    }
 
     </div>
 

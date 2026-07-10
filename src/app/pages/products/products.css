@@ -113,3 +113,22 @@
     color:white;
 
 }
+.no-results{
+
+    width:100%;
+    text-align:center;
+    padding:40px;
+
+}
+
+.no-results h3{
+
+    color:#444;
+
+}
+
+.no-results p{
+
+    color:#777;
+
+}
