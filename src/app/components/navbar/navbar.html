@@ -1,0 +1,54 @@
+<nav class="navbar">
+
+    <div class="logo" routerLink="/">
+
+        💻 TechStore
+
+    </div>
+    
+    <div class="menu">
+
+        <a
+            routerLink="/"
+            routerLinkActive="activo"
+            [routerLinkActiveOptions]="{exact:true}"
+        >
+            Inicio
+        </a>
+
+        <a
+            routerLink="/products"
+            routerLinkActive="activo"
+        >
+            Productos
+        </a>
+
+        <a
+            routerLink="/contact"
+            routerLinkActive="activo"
+        >
+            Contacto
+        </a>
+
+        <a
+            routerLink="/about"
+            routerLinkActive="activo"
+        >
+            Acerca de
+        </a>
+
+    </div>
+
+    <div class="icons">
+
+        
+
+        <a routerLink="/cart">
+
+        🛒 {{ totalItems() }}
+
+        </a>
+
+    </div>
+
+</nav>

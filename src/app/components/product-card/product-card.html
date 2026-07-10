@@ -1,0 +1,62 @@
+<div class="card">
+
+    <img
+        [src]="product().imagen"
+        [alt]="product().nombre"
+    >
+
+    <div class="card-content">
+
+        <span class="brand">
+            {{ product().marca }}
+        </span>
+
+        <h3>
+            {{ product().nombre }}
+        </h3>
+
+        <div class="rating">
+
+            @for (star of [1,2,3,4,5]; track star) {
+
+                <span>
+
+                    {{ star <= product().calificacion ? "⭐" : "☆" }}
+
+                </span>
+
+            }
+
+        </div>
+
+        <p class="description">
+
+            {{ product().descripcion }}
+
+        </p>
+
+        <div class="info">
+
+            <span class="price">
+
+                ${{ product().precio }}
+
+            </span>
+
+            <span class="stock">
+
+                📦 Stock: {{ product().stock }}
+
+            </span>
+
+        </div>
+
+        <button (click)="verDetalles()">
+
+            Ver detalles
+
+        </button>
+
+    </div>
+
+</div>

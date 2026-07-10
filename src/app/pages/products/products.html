@@ -1,0 +1,44 @@
+<section class="products-page">
+
+    <h1>Catálogo de Productos</h1>
+    <div class="search-box">
+
+    <input
+        type="text"
+        placeholder="🔍 Buscar productos..."
+        (input)="busqueda.set($any($event.target).value)"
+    >
+
+    <div class="categories">
+
+    @for (categoria of categorias; track categoria) {
+
+        <button
+
+            (click)="categoriaSeleccionada.set(categoria)"
+
+            [class.active]="categoriaSeleccionada() === categoria">
+
+            {{ categoria }}
+
+        </button>
+
+    }
+
+</div>
+
+</div>
+
+    <div class="products-grid">
+
+        @for (product of productosFiltrados(); track product.id) {
+
+            <app-product-card
+                [product]="product">
+            </app-product-card>
+
+        }
+
+    </div>
+
+</section>

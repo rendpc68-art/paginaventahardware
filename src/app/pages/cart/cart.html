@@ -1,0 +1,78 @@
+<h1>🛒 Mi carrito</h1>
+
+@if (cartItems().length === 0) {
+
+    <p>Tu carrito está vacío.</p>
+
+} @else {
+
+    @for (item of cartItems(); track item.product.id) {
+
+        <div class="cart-item">
+
+            <img
+                [src]="item.product.imagen"
+                [alt]="item.product.nombre"
+            >
+
+            <div class="info">
+
+                <h2>{{ item.product.nombre }}</h2>
+
+                <p>{{ item.product.descripcion }}</p>
+
+                <p>
+
+                    <strong>Precio:</strong>
+
+                    ${{ item.product.precio }}
+
+                </p>
+
+                <p>
+
+                    <strong>Cantidad:</strong>
+
+                    {{ item.quantity }}
+
+                </p>
+
+                <p>
+
+                    <strong>Subtotal:</strong>
+
+                    ${{ item.product.precio * item.quantity }}
+
+                </p>
+
+            </div>
+
+            <button
+                (click)="remove(item.product.id)"
+            >
+
+                ❌ Eliminar
+
+            </button>
+
+        </div>
+
+    }
+
+    <hr>
+
+    <h2>
+
+        Total: ${{ totalPrice() }}
+
+    </h2>
+
+    <button
+        (click)="clear()"
+    >
+
+        Vaciar carrito
+
+    </button>
+
+}

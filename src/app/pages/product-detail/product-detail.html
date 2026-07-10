@@ -1,0 +1,62 @@
+@if (product) {
+
+<div class="product-detail">
+
+    <img
+        [src]="product.imagen"
+        [alt]="product.nombre"
+    >
+
+    <div class="info">
+
+        <h1>{{ product.nombre }}</h1>
+
+        <h3>{{ product.marca }}</h3>
+
+        <p>
+
+            ⭐ {{ product.calificacion }}/5
+
+        </p>
+
+        <p>
+
+            <strong>Categoría:</strong>
+
+            {{ product.categoria }}
+
+        </p>
+
+        <p>
+
+            <strong>Precio:</strong>
+
+            ${{ product.precio }}
+
+        </p>
+
+        <p>
+
+            <strong>Stock:</strong>
+
+            {{ product.stock }}
+
+        </p>
+
+        <p>
+
+            {{ product.descripcion }}
+
+        </p>
+
+        <button (click)="addToCart()">
+
+            Agregar al carrito
+
+        </button>
+
+    </div>
+
+</div>
+
+}

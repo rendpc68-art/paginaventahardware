@@ -1,0 +1,73 @@
+.brand-carousel{
+
+    margin:70px auto;
+
+    overflow:hidden;
+
+}
+
+.brand-carousel h2{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.carousel{
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+}
+
+.track{
+
+    display:flex;
+
+    width:max-content;
+
+    animation:scroll 22s linear infinite;
+
+}
+
+.track:hover{
+
+    animation-play-state:paused;
+
+}
+
+.track img{
+
+    height:70px;
+
+    margin:0 40px;
+
+    object-fit:contain;
+
+    transition:.3s;
+
+}
+
+.track img:hover{
+
+    transform:scale(1.1);
+
+}
+
+@keyframes scroll{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}

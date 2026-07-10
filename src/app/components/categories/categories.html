@@ -1,0 +1,21 @@
+<section class="categories">
+
+    <h2>Categorías</h2>
+
+    <div class="buttons">
+
+        @for(cat of categorias; track cat){
+
+            <button
+                (click)="seleccionarCategoria(cat)"
+            >
+
+                {{ cat }}
+
+            </button>
+
+        }
+
+    </div>
+
+</section>
