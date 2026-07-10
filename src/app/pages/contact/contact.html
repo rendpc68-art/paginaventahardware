@@ -7,7 +7,6 @@
     Escríbenos y te ayudaremos.
   </p>
 
-
   <div class="contact-info">
 
     <div>
@@ -17,52 +16,65 @@
 
     <div>
       <h3>📞 Teléfono</h3>
-      <p>+593 999 999 999</p>
+      <p>+593 0963372410</p>
     </div>
 
     <div>
       <h3>✉️ Correo</h3>
-      <p>contacto@techstore.com</p>
+      <p>rendpc68@gmail.com</p>
     </div>
 
   </div>
 
+  <form class="contact-form" (ngSubmit)="enviarFormulario()">
 
-  <form class="contact-form">
+    <label>Nombre:</label>
 
-    <label>
-      Nombre:
-    </label>
-
-    <input 
+    <input
       type="text"
+      [(ngModel)]="nombre"
+      name="nombre"
       placeholder="Ingrese su nombre">
 
+    @if (enviado && nombre.trim().length < 3) {
+      <small class="error">
+        El nombre debe tener al menos 3 caracteres.
+      </small>
+    }
 
-    <label>
-      Correo:
-    </label>
+    <label>Correo:</label>
 
-    <input 
+    <input
       type="email"
+      [(ngModel)]="correo"
+      name="correo"
       placeholder="Ingrese su correo">
 
+    @if (enviado && !validarCorreo(correo)) {
+      <small class="error">
+        Ingrese un correo válido.
+      </small>
+    }
 
-    <label>
-      Mensaje:
-    </label>
+    <label>Mensaje:</label>
 
-    <textarea 
+    <textarea
       rows="5"
+      [(ngModel)]="mensaje"
+      name="mensaje"
       placeholder="Escriba su mensaje">
     </textarea>
 
+    @if (enviado && mensaje.trim().length < 10) {
+      <small class="error">
+        El mensaje debe contener al menos 10 caracteres.
+      </small>
+    }
 
     <button type="submit">
       Enviar mensaje
     </button>
 
   </form>
-
 
 </section>
